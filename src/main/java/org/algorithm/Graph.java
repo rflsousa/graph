@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Graph {
 
-    private ArrayList<Vertex> vertices;
-    private boolean isWeighted;
-    private boolean isDirected;
+    private final ArrayList<Vertex> vertices;
+    private final boolean isWeighted;
+    private final boolean isDirected;
 
     public Graph(boolean isWeighted, boolean isDirected) {
         this.isWeighted = isWeighted;
         this.isDirected = isDirected;
-        this.vertices = new ArrayList<Vertex>();
+        this.vertices = new ArrayList<>();
     }
 
     public Vertex addVertex(String data) {
@@ -69,6 +69,12 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Graph trainNetwork = new Graph(true, false);
+        Vertex luzStation = trainNetwork.addVertex("Luz Station");
+        Vertex piqueriStation = trainNetwork.addVertex("Piqueri Station");
+
+        trainNetwork.addEdge(luzStation, piqueriStation, 1000);
+
+        trainNetwork.print();
     }
 }

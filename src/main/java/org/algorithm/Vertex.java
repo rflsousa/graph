@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Vertex {
 
-    private String data;
-    private ArrayList<Edge> edges;
+    private final String data;
+    private final ArrayList<Edge> edges;
 
     public Vertex(String data) {
         this.data = data;
-        this.edges = new ArrayList<Edge>();
+        this.edges = new ArrayList<>();
     }
 
     public void addEdge(Vertex endVertex, Integer weight) {
@@ -24,7 +24,7 @@ public class Vertex {
         String message = "";
 
         if (this.edges.size() == 0) {
-            System.out.println(this.data + "--->");
+            System.out.println(this.data + " -->");
             return;
         }
 
@@ -42,6 +42,7 @@ public class Vertex {
                 message += ", ";
             }
         }
+        System.out.println(message);
     }
 
     public String getData() {
